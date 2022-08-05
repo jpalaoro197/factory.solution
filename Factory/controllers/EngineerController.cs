@@ -35,7 +35,7 @@ namespace Factory.Controllers
        _db.SaveChanges();
        if (MachineId != 0)
         {
-          _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+          _db.Factory.Add(new Factory() { MachineId = MachineId, EngineerId = engineer.EngineerId });
           _db.SaveChanges();
         }
       return RedirectToAction("Index");
@@ -62,7 +62,7 @@ namespace Factory.Controllers
     {
       if (MachineId != 0)
       {
-        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+        _db.Factory.Add(new Factory() { MachineId = MachineId, EngineerId = engineer.EngineerId });
       }
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
@@ -79,7 +79,7 @@ namespace Factory.Controllers
     {
       if (MachineId != 0)
       {
-        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+        _db.Factory.Add(new Factory() { MachineId = MachineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       } 
       return RedirectToAction("Index");
@@ -103,8 +103,8 @@ namespace Factory.Controllers
     [HttpPost]
 public ActionResult DeleteMachine(int joinId)
 {
-    var joinEntry = _db.MachineEngineer.FirstOrDefault(entry => entry.MachineEngineerId == joinId);
-    _db.MachineEngineer.Remove(joinEntry);
+    var joinEntry = _db.Factory.FirstOrDefault(entry => entry.FactoryId == joinId);
+    _db.Factory.Remove(joinEntry);
     _db.SaveChanges();
     return RedirectToAction("Index");
 } 
