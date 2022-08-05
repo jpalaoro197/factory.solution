@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using UniversityRoster.Models;
+using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System;
@@ -10,9 +10,9 @@ namespace Factory.Controllers
 {
   public class EngineersController : Controller
   {
-    private readonly UniversityRosterContext _db;
+    private readonly FactoryContext _db;
 
-    public EngineersController(UniversityRosterContext db)
+    public EngineersController(FactoryContext db)
     {
       _db = db;
     }
