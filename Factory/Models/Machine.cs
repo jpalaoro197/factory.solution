@@ -6,13 +6,13 @@ namespace UniversityRoster.Models
     {
         public Machine()
         {
-            this.JoinEntities = new HashSet<MachineEngineer>();
+            this.JoinEntities = new HashSet<EngineerMachine>();
         }
 
         public int MachineId { get; set; }
         public string Name { get; set; }
         
-        public virtual ICollection<MachineEngineer> JoinEntities { get; set; }
+        public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
 
     }
 }

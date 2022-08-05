@@ -7,7 +7,7 @@ namespace Factory.Models
     {
         public Engineer()
         {
-            this.JoinEntities = new HashSet<MachineEngineer>();
+            this.JoinEntities = new HashSet<EngineerMachine>();
         }
 
         public int EngineerId { get; set; }
@@ -15,6 +15,6 @@ namespace Factory.Models
         [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Date { get; set; }
 
-        public virtual ICollection<MachineEngineer> JoinEntities { get;}
+        public virtual ICollection<EngineerMachine> JoinEntities { get;}
     }
 }
