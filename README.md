@@ -41,17 +41,17 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <li>Open a shell program and navigate to your desktop.
 <li>Clone the repository for this project using the "git clone" command and including the copied URL.
 <li>While still in the shell program, navigate to the root directory of the newly created file named "Salon.Solution".
-<li>From the root directory, navigate to the "HairSalon" directory.
-<li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
+<li>From the root directory, navigate to the "Factory" directory.
+
 <br>
 </details>
 
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 <ol>
-<li>Create an appsetting.json file in the "HairSalon" directory of the project*  
-   <pre>HairSalon.Solution
-   └── HairSalon
+<li>Create an appsetting.json file in the "Factory" directory of the project*  
+   <pre>Factory.Solution
+   └── Factory
     └── appsetting.json</pre>
 <li> Insert the following code** : <br>
 
@@ -62,26 +62,21 @@ _This is an MVC application that was built using C#. The purpose of this applica
 }</pre>
 <small>*note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small><br>
 <small>**note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
-
-<li>Once "appsettings.json" file has been created, navigate back to SQL Workbench.
-<li>Import the database named "jacob_palaoro.sql" from the root directory of the project.<br><br>
+ project.<br><br>
 How to Import a Database:
 <ol> 
-  <li>Open SQL Workbench.
-  <li>Navigate to "Administration" tab in SQL Workbench.
-  <li>Click "Data Import/Restore".
-  <li>Select the radio button "Import from Self-Contained File" and include file path to the sql file of this project you cloned to your machine.
-  <li>In "Default Schema to be Imported to" click "New".
-  <li>Name the schema "jacob_palaoro" then click "OK".
-  <li>Once named, switch to "Import Progress" tab and click "Start Import".
+  <li>Open your terminal 
+  <li>Move to factory folder in the project
+  <li>run dotnet ef migrations add Initial
+  <li> dotnet ef database update
   
 </details>
 
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to:  
-   <pre>HairSalon.Solution
-   └── <strong>HairSalon</strong></pre>
+   <pre>Factory.Solution
+   └── <strong>Factory</strong></pre>
 
 Run ```$ dotnet restore``` in the console.<br>
 Run ```$ dotnet run``` in the console
